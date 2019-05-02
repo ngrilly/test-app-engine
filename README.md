@@ -35,11 +35,21 @@ Deploy to Google App Engine:
 
     $ gcloud app deploy
 
-In the Google Cloud console, go to [Cloud Build > History](https://console.cloud.google.com/cloud-build/builds), open the last build, and check the log.
+In the Google Cloud console, go to [Cloud Build > History](https://console.cloud.google.com/cloud-build/builds), open the last build, and check the logs.
+You should see something similar to this:
+
+```
+...
+Step #1 - "builder": 2019/05/02 15:23:01 Running &{/usr/local/go/bin/go [go build -o /tmp/staging273166152/usr/local/bin/start .] [PATH=/go/bin:/usr/local/go/bin:/builder/google-cloud-sdk/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin HOSTNAME=fc04630b97f5 HOME=/builder/home BUILDER_OUTPUT=/builder/outputs DEBIAN_FRONTEND=noninteractive GOROOT=/usr/local/go/ GOPATH=/go GO111MODULE=on GOCACHE=/tmp/cache103838215 GOPATH=/go] /tmp/staging273166152/srv <nil> <nil> <nil> [] <nil> <nil> <nil> <nil> <nil> false [] [] [] [] <nil> <nil>}
+Step #1 - "builder": 2019/05/02 15:24:13 Wrote build output to /builder/outputs/output
+...
+```
+
+In this case, `go build` runs for 1 minute and 12 seconds (it starts at 15:23:01 and ends at 15:24:13).
 
 Now go to [Logging > Logs](https://console.cloud.google.com/logs/viewer) and check if there is a request for `/hello?go-get=1`.
 
-## Conclusion
+## Results
 
-Each time we deploy with `gcloud app deploy`, App Engine downloads the dependency test-golang-cache.appspot.com/hello.
-It looks like the dependency cache mentioned in the [documentation](XXX) is not used.
+Each time I deploy with `gcloud app deploy`, there is an HTTPS request fetching the dependency at `test-golang-cache.appspot.com/hello`.
+It looks like the cache mentioned in the documentation is not used.

@@ -121,3 +121,5 @@ honnef.co/go/tools v0.0.0-20190102054323-c2f93a96b099/go.mod h1:rf3lG4BRIbNafJWh
 honnef.co/go/tools v0.0.0-20190106161140-3f1c8253044a/go.mod h1:rf3lG4BRIbNafJWhAfAdb/ePZxsR/4RtNHQocxwk9r4=
 test-golang-cache.appspot.com/hello v0.0.0-20190425092139-13bcebaddff2 h1:KXetUBOIRSqSI+i9Im4UpihmYEQEEcShcbvtjT8NHEc=
 test-golang-cache.appspot.com/hello v0.0.0-20190425092139-13bcebaddff2/go.mod h1:rUsUeDNSBf+j4WPAwPBQyB9ZYi6pxHuJBIj6lVWZ0VQ=
+test-golang-cache.appspot.com/hello v0.0.0-20190502150146-25210274f4df h1:gh6EYC0660aPMmH9gMM6QefAM9+FZ/ua1lv4nOtBpko=
+test-golang-cache.appspot.com/hello v0.0.0-20190502150146-25210274f4df/go.mod h1:rUsUeDNSBf+j4WPAwPBQyB9ZYi6pxHuJBIj6lVWZ0VQ=
