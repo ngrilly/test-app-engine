@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	// Setup Google Cloud Datastore
+	// Use Cloud Datastore, even if we don't need it, to artificially increase the time required to fetch dependencies.
 	ctx := context.Background()
 	_, err := datastore.NewClient(ctx, "jevoteclimat")
 	if err != nil {
